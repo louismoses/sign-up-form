@@ -1,0 +1,11 @@
+.main {
+  max-width: 500px;
+  border: 1px solid #3b71ca;
+  padding: 24px 8px;
+}
+.logo-box {
+  text-align: center;
+  font-size: 10vh;
+  padding: 4rem;
+  color: #3b71ca;
+}
