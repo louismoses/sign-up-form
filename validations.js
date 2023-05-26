@@ -2,10 +2,14 @@
 const firstName = document.querySelector("#first-name-el");
 const middleName = document.querySelector("#middle-name-el");
 const lastName = document.querySelector("#last-name-el");
+const emailAdd = document.querySelector("#email-address-el");
+const password = document.querySelector("#password-el");
+const confirmPassword = document.querySelector("#confirm-password-el");
 const loginForm = document.querySelector("#loginForm");
 
 let validate = {
   firstname: false,
+  middlename: false,
   lastname: false,
   email: false,
   contact: false,
@@ -15,7 +19,6 @@ let validate = {
 
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
-
   if (
     validate.firstname === true &&
     validate.lastname === true &&
@@ -41,6 +44,7 @@ firstName.onkeyup = (e) => {
     firstName.previousElementSibling.classList.add("d-none");
     validate.firstname = true;
   }
+  checkValidation();
 };
 middleName.onkeyup = (e) => {
   if (e.target.value.length > 20) {
@@ -55,6 +59,7 @@ middleName.onkeyup = (e) => {
     middleName.previousElementSibling.classList.add("d-none");
     validate.middlename = true;
   }
+  checkValidation();
 };
 lastName.onkeyup = (e) => {
   if (e.target.value.length > 20) {
@@ -69,4 +74,20 @@ lastName.onkeyup = (e) => {
     lastName.previousElementSibling.classList.add("d-none");
     validate.lastname = true;
   }
+  checkValidation();
 };
+
+function checkValidation() {
+  if (
+    validate.firstname === true &&
+    validate.lastname === true &&
+    validate.email === true &&
+    validate.contact === true &&
+    validate.password === true &&
+    validate.confirm_password === true
+  ) {
+    document.querySelector(".btn-submit-el").removeAttribute("disabled");
+  } else {
+    document.querySelector(".btn-submit-el").setAttribute("disabled", true);
+  }
+}
