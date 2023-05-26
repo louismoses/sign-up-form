@@ -9,3 +9,9 @@
   padding: 4rem;
   color: #3b71ca;
 }
+.error-message {
+  position: absolute;
+  font-size: 10px;
+  transform: translate(10px, 40px);
+  color: red;
+}
